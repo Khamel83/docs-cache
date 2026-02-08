@@ -63,6 +63,18 @@ docs-cache/
 └── README.md                 # This file
 ```
 
+## Setup
+
+```bash
+# Copy env template and add your keys
+cp .env.example .env
+# Edit .env with your EXA_API_KEY and JINA_API_KEY
+```
+
+The `.env` file is gitignored and contains:
+- `EXA_API_KEY` — For `/freesearch` (Exa API, zero-token research)
+- `JINA_API_KEY` — For web reading/summarization
+
 ## Global Rule
 
 The full pattern lives at `~/.claude/rules/docs-cache-pattern.md` and includes:
