@@ -1,9 +1,108 @@
-Title: Tailscale CLI · Tailscale Docs
+# Tailscale Documentation
 
-URL Source: https://tailscale.com/kb/1080/client-api
+> Source: https://tailscale.com/kb/
+> Category: services
+> Cached: 2026-02-08
 
-Markdown Content:
-The Tailscale client includes a built-in command-line interface (CLI) you can use to manage and troubleshoot your device within your Tailscale network (known as a tailnet).
+## Welcome to Tailscale
+
+Tailscale securely connects your devices, no matter where they live. Built on WireGuard® for enterprise-grade networking.
+
+## Quick Start
+
+1. Install Tailscale
+2. Create a network (tailnet)
+3. Invite your team
+
+## How-to Guides
+
+### Manage Access
+- Manage access control
+- Manage just-in-time access
+- Manage devices
+- Manage users
+- Tailnet Lock
+
+### Route Traffic
+- Set up a subnet router
+- Set up an exit node
+- Set up an app connector
+- Use DNS
+- Set up MagicDNS
+- Set up high availability
+
+### Set Up Servers
+- Set up a server
+- Use tags
+- Install Tailscale with cloud-init
+- Use auth keys
+- Use Tailscale SSH
+- Set up HTTPS certificates
+- Run an ephemeral node
+- Run unattended
+
+### Access & Share Services
+- View services
+- Share nodes
+- Use Taildrop
+
+### Share a Web Server
+- **Tailscale Funnel** - Expose local services publicly
+- **Tailscale Serve** - Share services on your tailnet
+
+### Solutions
+- Code from your iPad
+- Lock down a server
+- Access a PiKVM
+- Run a Pi-hole
+- Secure external services
+- Just-in-time access
+- Automation
+
+## Integrations
+
+- Cloud servers (AWS, GCP, Azure, DigitalOcean, etc.)
+- Containers and virtualization (Docker, Kubernetes, Podman)
+- Serverless apps
+- Databases
+- Remote environments
+- Developer tools
+- Firewalls
+- Web servers
+- NAS devices
+
+## Key Use Cases
+
+- **Remote Access** - Access devices from anywhere
+- **Site-to-site Networking** - Connect offices and locations
+- **Multi-cloud Networking** - Unify cloud resources
+- **Kubernetes Networking** - Connect K8s clusters
+- **Edge & IoT Deployments** - Connect edge devices
+- **Zero Trust Networking** - Replace VPNs with identity-based access
+- **AI Workloads** - Secure AI infrastructure
+- **Secure SaaS** - Control access to SaaS applications
+- **Business VPN** - Modern VPN alternative
+- **Homelab** - Personal infrastructure networking
+
+## CLI Reference (Quick)
+
+### Common Commands
+- `tailscale up` - Connect to Tailscale
+- `tailscale status` - Show connection status
+- `tailscale ping <host>` - Ping another device
+- `tailscale ip` - Get Tailscale IP address
+- `tailscale down` - Disconnect
+
+### Key Flags for `tailscale up`
+- `--accept-routes` - Accept subnet routes from other nodes
+- `--advertise-exit-node` - Offer to be an exit node
+- `--advertise-routes=<ip>` - Expose subnet routes
+- `--exit-node=<ip|name>` - Use specific exit node
+- `--ssh` - Enable Tailscale SSH
+
+---
+
+Legacy CLI reference cached at: https://tailscale.com/kb/1080/client-api
 
 The Tailscale CLI
 
