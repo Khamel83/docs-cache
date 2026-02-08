@@ -19,6 +19,7 @@ ls docs/cache/*/
 3. **Fetch if missing** — Use webReader MCP: `@mcp__web_reader__webReader{"url": "..."}`
 4. **Save to cache** — Write to `docs/cache/{category}/{name}/README.md`
 5. **Update index** — Add entry to `docs/cache/.index.md`
+6. **Commit changes** — `git add docs/cache/ && git commit -m "Add cache: {name}" && git push`
 
 ## Cached Categories
 
