@@ -2,7 +2,44 @@
 
 A centralized cache of external service documentation. Use this **before** reaching for WebSearch.
 
+## Quick Start
+
+```bash
+# Add cache to your PATH
+export PATH="$PATH:$HOME/github/docs-cache/bin"
+
+# From any project, link cached docs
+cd /your/project
+docs-link add polymarket convex tailscale
+
+# View what's linked
+docs-link list
+
+# See all available cached docs
+docs-link available
+```
+
 ## How to Use
+
+### Option 1: Using docs-link (Recommended)
+
+```bash
+# Add docs to your current project
+docs-link add <name>...
+
+# List linked docs
+docs-link list
+
+# Remove a link
+docs-link remove <name>
+
+# Show available cached docs
+docs-link available
+```
+
+Links are created in `docs/external/<name>` pointing to the central cache.
+
+### Option 2: Direct Reference
 
 Add this line to any project's `CLAUDE.md`:
 
@@ -10,7 +47,7 @@ Add this line to any project's `CLAUDE.md`:
 ~/.claude/rules/docs-cache-pattern.md
 ```
 
-That's it. Agents will now:
+Agents will now:
 1. Check the cache first
 2. Use `/freesearch` for research (saves WebSearch quota)
 3. Only WebSearch for time-sensitive facts
@@ -47,10 +84,48 @@ git push
 - **Accuracy** — Cached docs don't drift
 - **Reliability** — Works offline
 
+## docs-link CLI
+
+The `docs-link` command manages symlinks between the central cache and your projects.
+
+**Commands:**
+
+| Command | Description |
+|---------|-------------|
+| `add <name>...` | Add symlinks to current project |
+| `list` | Show what's linked in this project |
+| `remove <name>` | Remove a symlink |
+| `available` | Show all cached docs available to link |
+| `sync` | Update all symlinks (if cache moved) |
+
+**Setup:**
+
+```bash
+# Add to PATH (put in ~/.bashrc or ~/.zshrc)
+export PATH="$PATH:$HOME/github/docs-cache/bin"
+```
+
+**Manifest File:**
+
+Each project gets `.docs-links.json` tracking linked docs:
+
+```json
+{
+  "cache_path": "/home/ubuntu/github/docs-cache/docs/cache",
+  "links": {
+    "polymarket": "services/polymarket",
+    "convex": "tools/convex"
+  },
+  "updated": "2026-02-08T12:00:00Z"
+}
+```
+
 ## Structure
 
 ```
 docs-cache/
+├── bin/
+│   └── docs-link             # CLI tool for linking docs to projects
 ├── CLAUDE.md                 # Project instructions
 ├── docs/
 │   ├── cache/
