@@ -5,8 +5,8 @@ A centralized cache of external service documentation. Use this **before** reach
 ## Quick Start
 
 ```bash
-# Add cache to your PATH
-export PATH="$PATH:$HOME/github/docs-cache/bin"
+# Install oneshot (includes docs-link CLI)
+cd ~/github/oneshot && ./install.sh
 
 # From any project, link cached docs
 cd /your/project
@@ -18,6 +18,8 @@ docs-link list
 # See all available cached docs
 docs-link available
 ```
+
+**Note:** `docs-link` is maintained in the [oneshot](https://github.com/Khamel83/oneshot) repository and installed to `~/.local/bin/docs-link`.
 
 ## How to Use
 
@@ -86,6 +88,8 @@ git push
 
 ## docs-link CLI
 
+**Source:** [oneshot/scripts/docs-link](https://github.com/Khamel83/oneshot/blob/master/scripts/docs-link)
+
 The `docs-link` command manages symlinks between the central cache and your projects.
 
 **Commands:**
@@ -124,8 +128,7 @@ Each project gets `.docs-links.json` tracking linked docs:
 
 ```
 docs-cache/
-├── bin/
-│   └── docs-link             # CLI tool for linking docs to projects
+├── bin/                      # (Legacy - use oneshot/scripts/docs-link)
 ├── CLAUDE.md                 # Project instructions
 ├── docs/
 │   ├── cache/
@@ -137,6 +140,8 @@ docs-cache/
 │   └── research/             # Research findings
 └── README.md                 # This file
 ```
+
+**docs-link is maintained in:** https://github.com/Khamel83/oneshot/blob/master/scripts/docs-link
 
 ## Setup
 
