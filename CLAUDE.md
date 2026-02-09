@@ -41,3 +41,17 @@ ls docs/cache/*/
 
 - Global pattern: `~/.claude/rules/docs-cache-pattern.md`
 - Research: `docs/research/llm-doc-caching/research.md`
+
+## External Documentation
+
+This project has links to cached external documentation:
+
+```bash
+# View linked docs
+ls docs/external/
+
+# See available cached docs
+docs-link available
+```
+
+Cached docs are managed via the central cache at ~/github/docs-cache/
