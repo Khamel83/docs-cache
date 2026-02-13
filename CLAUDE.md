@@ -2,6 +2,21 @@
 
 This repository maintains a local cache of external service documentation. **Always check the cache before using WebSearch/WebFetch.**
 
+## Search Order (MUST follow)
+
+Before WebSearch, go through this order:
+
+1. **Docs cache** → `cat docs/cache/.index.md`
+2. **`/freesearch`** → Exa API (zero token cost)
+3. **Training data** → Most docs/libs already known
+4. **WebSearch** → Last resort only
+
+**WebSearch only for:**
+- Time-sensitive facts (current date, latest version)
+- Confirmation when training data conflicts
+
+**WebReader MCP** → Use only for caching new docs, not for research.
+
 ## Quick Check
 
 ```bash
@@ -55,3 +70,9 @@ docs-link available
 ```
 
 Cached docs are managed via the central cache at ~/github/docs-cache/
+
+<!--
+  ONE-SHOT Heartbeat Metadata
+  oneshot:last-check: 2026-02-13
+  oneshot:machine: instance-first
+-->
