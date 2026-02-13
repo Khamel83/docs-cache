@@ -1,132 +1,85 @@
-# Task Plan: Local-First Documentation Cache Pattern
-
-**Created:** 2026-02-08
-**Status:** In Progress
-**Epic:** Docs Cache Self-Updating Pattern
+# Task Plan: GitHub Repo Library Documentation Catalog
 
 ## Objective
+Catalog all libraries/dependencies across all accessible GitHub repos and generate documentation links.
 
-Establish a reusable pattern for AI agents to check local documentation caches before fetching external docs, with automatic cache updates on a slow cadence.
+## Done Criteria
+- [ ] All accessible repos scanned for dependency files
+- [ ] All unique libraries extracted with versions
+- [ ] Documentation URLs found for each library
+- [ ] Master list generated sorted by frequency/popularity
 
-## Success Criteria
+## Output Format
+`library-catalog.md` with:
+- Library name
+- Documentation URL
+- Repos using it
+- Language/category
 
-1. [ ] `CLAUDE.md` exists in `docs-cache/` repo with local-first rule
-2. [ ] `docs/cache/.index.md` exists with catalog of cached docs
-3. [ ] Pattern added to `oneshot` CLAUDE.md or rules
-4. [ ] Both repos committed and pushed
-5. [ ] Pattern is discoverable by future agents
+---
 
 ## Phases
 
-### Phase 1: Create Files in docs-cache Repo
+### Phase 1: Repo Discovery & Cloning
+- Get list of all accessible repos (public + private)
+- Clone repos to temporary location for analysis
+- Handle access permissions for private repos
 
-**Target:** `/home/ubuntu/github/docs-cache`
+### Phase 2: Dependency File Identification
+Scan each repo for dependency files:
+- JavaScript/TypeScript: `package.json`, `package-lock.json`, `yarn.lock`, `pnpm-lock.yaml`
+- Python: `requirements.txt`, `pyproject.toml`, `poetry.lock`, `Pipfile`
+- Go: `go.mod`, `go.sum`
+- Rust: `Cargo.toml`, `Cargo.lock`
+- Ruby: `Gemfile`, `Gemfile.lock`
+- Java/Kotlin: `pom.xml`, `build.gradle`
+- Other: `docker-compose.yml` (for service dependencies)
 
-| File | Content | Purpose |
-|------|---------|---------|
-| `CLAUDE.md` | Local-first docs rule | Project-specific instruction for agents |
-| `docs/cache/.index.md` | Catalog table | Quick reference for what's cached |
+### Phase 3: Library Extraction
+Parse dependency files and extract:
+- Library name
+- Version (if specified)
+- Dependency type (prod, dev, peer, etc.)
 
-**CLAUDE.md Template:**
-```markdown
-# Local-First Documentation
+### Phase 4: Documentation URL Resolution
+For each unique library:
+- Check existing docs-cache at `/home/ubuntu/github/docs-cache/docs/cache/.index.md`
+- Search for official documentation URLs
+- Categorize by language/ecosystem
 
-Before using WebSearch/WebFetch for external service documentation:
+### Phase 5: Catalog Generation
+- Aggregate all findings
+- Sort by frequency (repos using it)
+- Categorize by language
+- Generate final markdown file
 
-1. Check local cache: `ls docs/cache/` or read `docs/cache/.index.md`
-2. If cached content exists, use it
-3. If missing or stale (30+ days), fetch with webReader MCP
-4. Save new cache to `docs/cache/<category>/<name>/README.md`
-5. Update `docs/cache/.index.md` with entry
-```
-
-**docs/cache/.index.md Template:**
-```markdown
-# Cached Documentation Catalog
-
-| Name | Category | URL | Cached | Source |
-|------|----------|-----|--------|--------|
-| nextjs | javascript | https://nextjs.org/docs | 2026-02-07 | webReader |
-| convex | tools | https://docs.convex.dev | 2026-02-01 | webReader |
-```
-
-### Phase 2: Scan and Populate .index.md
-
-**Action:** Scan existing `docs/cache/` and populate the index
-
-```bash
-find docs/cache -name "README.md" -exec head -5 {} \; | grep -E "(Title:|URL Source:)"
-```
-
-Extract: name, URL source, date from existing files.
-
-### Phase 3: Add Pattern to oneshot Repo
-
-**Target:** `/home/ubuntu/github/oneshot`
-
-**Option A:** Add to existing `CLAUDE.md`
-**Option B:** Add to `~/.claude/rules/docs-cache-pattern.md` (global rule)
-
-Decision: **Option B** - Add as global rule so all projects benefit, with oneshot as reference implementation.
-
-**File:** `~/.claude/rules/docs-cache-pattern.md`
-```markdown
-# Local-First Documentation Cache Pattern
-
-When working with external service documentation:
-
-1. Check for project-level cache: `ls docs/cache/` or `docs/external/`
-2. Check global cache: `ls ~/.claude/docs/cache/`
-3. Use webReader MCP to fetch if missing
-4. Save with clear naming: `<category>/<name>/README.md`
-5. Update index file
-
-Reference: `~/github/docs-cache`
-```
-
-### Phase 4: Commit and Push
-
-**docs-cache repo:**
-```bash
-git add CLAUDE.md docs/cache/.index.md
-git commit -m "Add local-first docs cache pattern"
-git push
-```
-
-**oneshot repo:**
-```bash
-# If modifying oneshot CLAUDE.md
-cd ~/github/oneshot
-git add CLAUDE.md
-git commit -m "Reference docs-cache pattern"
-git push
-```
-
-**Global rules (no git):**
-```bash
-# Rules are in ~/.claude/rules/, already tracked separately
-```
+---
 
 ## Decisions
 
-| Decision | Choice | Rationale |
-|----------|--------|-----------|
-| Index location | `docs/cache/.index.md` | Colocated with cache, easy to find |
-| Update cadence | 30 days | Docs don't change often, slow refresh |
-| Fetch method | webReader MCP | Already available, handles markdown conversion |
-| Pattern scope | Global rule + project CLAUDE.md | Reusable across all projects |
+### Storage Location
+- Working directory: `/tmp/repo-scan/`
+- Catalog output: `/home/ubuntu/github/docs-cache/library-catalog.md`
+
+### Tools
+- `gh` CLI for repo access
+- `jq` for JSON parsing
+- Standard grep/awk for extraction
+
+### Scope
+- Include all public repos
+- Include private repos where `gh` has access
+- Skip archived/inactive repos (user can review)
+
+---
 
 ## Dependencies
+- `gh` CLI installed and authenticated
+- Network access for documentation lookups
+- Write access to docs-cache repo
 
-- [x] Research completed (`docs/research/llm-doc-caching/research.md`)
-- [ ] Existing docs scanned for .index.md population
-- [ ] oneshot repo structure reviewed
+---
 
 ## Open Questions
-
-None currently.
-
-## Related
-
-- Research: `docs/research/llm-doc-caching/research.md`
-- Global rules: `~/.claude/rules/docs-first.md` (conflicting path `docs/external/` vs `docs/cache/`)
+- Should we include transitive dependencies? (Probably no - too much noise)
+- Should we suggest caching missing docs to docs-cache? (Yes, as follow-up)
