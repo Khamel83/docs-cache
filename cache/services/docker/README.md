@@ -1,4 +1,6 @@
-Title: Home
+<!-- STATUS: DEGRADED — This cache contains a cookie consent page, not actual Docker documentation. Needs re-caching. -->
+
+Title: Docker
 
 URL Source: https://docs.docker.com/
 
