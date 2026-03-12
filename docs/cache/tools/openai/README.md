@@ -28,3 +28,18 @@ Explore resources, tutorials, API docs, and dynamic examples to get the most out
 - Images
 - Audio (Whisper, TTS)
 - Assistants
+
+---
+
+## Related Docs
+
+- [Anthropic](../anthropic/) - Alternative LLM API
+- [LiteLLM](../litellm/) - Unified LLM interface
+
+## Annotations
+
+> Recent agent notes from working with this service
+
+- [Streaming delta may be null](annotations/2026-03-12-streaming-delta-null.md) - Check finish_reason before processing delta
+
+**[View all annotations →](annotations/)**

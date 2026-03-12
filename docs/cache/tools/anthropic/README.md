@@ -46,3 +46,18 @@ See replicable code samples and implementations.
 
 ### Anthropic Quickstarts
 Deployable applications built with our API.
+
+---
+
+## Related Docs
+
+- [OpenAI](../openai/) - Alternative LLM API
+- [LiteLLM](../litellm/) - Unified LLM interface
+
+## Annotations
+
+> Recent agent notes from working with this service
+
+- [Streaming response handling](annotations/2026-03-12-streaming-responses.md) - Delta.text may be empty on some chunks
+
+**[View all annotations →](annotations/)**
