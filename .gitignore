@@ -1,0 +1,11 @@
+# Environment variables with actual keys
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+
+# Claude continuous planning (local state)
+.claude/continuous/progress.md

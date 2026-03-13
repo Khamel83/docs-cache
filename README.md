@@ -1,94 +1,166 @@
-# Documentation Cache
+# Docs Cache — Shared Documentation Cache for AI Agents
 
-Offline cache of external documentation for popular libraries, frameworks, and services. Designed to give LLMs and developers fast, local access to reference documentation without requiring internet lookups.
+A centralized cache of external service documentation. Use this **before** reaching for WebSearch.
 
-## Purpose
+## Quick Start
 
-This repository stores markdown-converted copies of official documentation. It is useful when:
+```bash
+# Install oneshot (includes docs-link CLI)
+cd ~/github/oneshot && ./install.sh
 
-- An LLM needs to reference library docs during code generation or review
-- You want offline access to documentation
-- You need a stable snapshot of docs at a known point in time
+# From any project, link cached docs
+cd /your/project
+docs-link add polymarket convex tailscale
 
-## How to Find Documentation
+# View what's linked
+docs-link list
 
-### Directory structure
-
-All cached documentation lives under `cache/` organized by category:
-
-```
-cache/
-  python/          # Python packages (fastapi, httpx, pandas, etc.)
-  javascript/      # JavaScript/Node frameworks (nextjs, etc.)
-  services/        # Infrastructure and hosted services (docker, tailscale, etc.)
-  tools/           # Platform tools and SaaS products (convex, supabase, vercel, etc.)
+# See all available cached docs
+docs-link available
 ```
 
-Each tool has its own subdirectory containing a single `README.md`:
+**Note:** `docs-link` is maintained in the [oneshot](https://github.com/Khamel83/oneshot) repository and installed to `~/.local/bin/docs-link`.
 
-```
-cache/<category>/<tool-name>/README.md
-```
+## How to Use
 
-### Index
+### Option 1: Using docs-link (Recommended)
 
-The [.index.md](.index.md) file lists every cached source with its:
+```bash
+# Add docs to your current project
+docs-link add <name>...
 
-- Tool name and file path
-- Original source URL
-- Cache timestamp
-- Category
-- Content status (ok or degraded)
+# List linked docs
+docs-link list
 
-### Search strategy for LLMs
+# Remove a link
+docs-link remove <name>
 
-1. **Check `.index.md`** first to see if the tool/library is cached and find its file path.
-2. **Read the file** at `cache/<category>/<tool-name>/README.md`.
-3. **If the tool is not listed**, it is not cached here. Fall back to other sources.
-
-## Cached File Format
-
-Every `README.md` in the cache follows this format:
-
-```
-Title: <display name>
-
-URL Source: <original documentation URL>
-
-Published Time: <ISO 8601 timestamp>        # optional, included when available
-
-Markdown Content:
-<full documentation body converted to markdown>
+# Show available cached docs
+docs-link available
 ```
 
-| Field            | Required | Description                                      |
-|------------------|----------|--------------------------------------------------|
-| Title            | yes      | Human-readable name of the tool or library       |
-| URL Source        | yes      | URL the documentation was fetched from           |
-| Published Time    | no       | Publication or last-modified timestamp if available |
-| Markdown Content  | yes      | The documentation body in GitHub-flavored Markdown |
+Links are created in `docs/external/<name>` pointing to the central cache.
 
-## Category Guidelines
+### Option 2: Direct Reference
 
-| Category      | Use for                                                  | Examples                          |
-|---------------|----------------------------------------------------------|-----------------------------------|
-| `python`      | Python packages installable via pip/poetry               | fastapi, httpx, pandas, aiohttp   |
-| `javascript`  | JavaScript/TypeScript packages installable via npm/yarn  | nextjs                            |
-| `services`    | Infrastructure, hosting, and managed services            | docker, tailscale                 |
-| `tools`       | Multi-language platforms, SaaS products, workflow tools  | convex, supabase, vercel, n8n     |
+Add this line to any project's `CLAUDE.md`:
 
-When a library exists primarily in one language ecosystem (e.g., pandas is a Python package even though it has broad use), place it under that language category.
+```markdown
+~/.claude/rules/docs-cache-pattern.md
+```
 
-## Content Quality
+Agents will now:
+1. Check the cache first
+2. Use `/freesearch` for research (saves WebSearch quota)
+3. Only WebSearch for time-sensitive facts
 
-Some cached entries may contain degraded content (e.g., cookie consent pages instead of actual documentation) due to scraping limitations. These are flagged in `.index.md` with a `degraded` status. Degraded entries should not be relied upon and need re-caching.
+## What's Cached
 
-## Adding or Updating Documentation
+| Category | Examples |
+|----------|----------|
+| `tools/` | Convex, Supabase, Vercel, Traefik, n8n |
+| `python/` | FastAPI, HTTPX, Poetry, Typer |
+| `javascript/` | Next.js |
+| `services/` | Docker, Tailscale |
 
-To add a new cached source:
+See `docs/cache/.index.md` for full catalog.
 
-1. Create the directory: `cache/<category>/<tool-name>/`
-2. Add a `README.md` following the format above
-3. Add an entry to `.index.md`
+## Adding New Docs
 
-To update an existing entry, replace the `README.md` content and update the timestamp in `.index.md`.
+When you fetch new documentation:
+
+1. Save to `docs/cache/{category}/{name}/README.md`
+2. Add entry to `docs/cache/.index.md`
+3. Commit and push
+
+```bash
+git add docs/cache/
+git commit -m "Add cache: {name}"
+git push
+```
+
+## Why
+
+- **Speed** — Local files are instant
+- **Cost** — Saves WebSearch API quota
+- **Accuracy** — Cached docs don't drift
+- **Reliability** — Works offline
+
+## docs-link CLI
+
+**Source:** [oneshot/scripts/docs-link](https://github.com/Khamel83/oneshot/blob/master/scripts/docs-link)
+
+The `docs-link` command manages symlinks between the central cache and your projects.
+
+**Commands:**
+
+| Command | Description |
+|---------|-------------|
+| `add <name>...` | Add symlinks to current project |
+| `list` | Show what's linked in this project |
+| `remove <name>` | Remove a symlink |
+| `available` | Show all cached docs available to link |
+| `sync` | Update all symlinks (if cache moved) |
+
+**Setup:**
+
+```bash
+# Add to PATH (put in ~/.bashrc or ~/.zshrc)
+export PATH="$PATH:$HOME/github/docs-cache/bin"
+```
+
+**Manifest File:**
+
+Each project gets `.docs-links.json` tracking linked docs:
+
+```json
+{
+  "cache_path": "/home/ubuntu/github/docs-cache/docs/cache",
+  "links": {
+    "polymarket": "services/polymarket",
+    "convex": "tools/convex"
+  },
+  "updated": "2026-02-08T12:00:00Z"
+}
+```
+
+## Structure
+
+```
+docs-cache/
+├── bin/                      # (Legacy - use oneshot/scripts/docs-link)
+├── CLAUDE.md                 # Project instructions
+├── docs/
+│   ├── cache/
+│   │   ├── .index.md         # Catalog of cached docs
+│   │   ├── tools/            # Frameworks & libraries
+│   │   ├── python/           # Python packages
+│   │   ├── javascript/       # JS/TS frameworks
+│   │   └── services/         # External services
+│   └── research/             # Research findings
+└── README.md                 # This file
+```
+
+**docs-link is maintained in:** https://github.com/Khamel83/oneshot/blob/master/scripts/docs-link
+
+## Setup
+
+```bash
+# Copy env template and add your keys
+cp .env.example .env
+# Edit .env with your EXA_API_KEY and JINA_API_KEY
+```
+
+The `.env` file is gitignored and contains:
+- `EXA_API_KEY` — For `/freesearch` (Exa API, zero-token research)
+- `JINA_API_KEY` — For web reading/summarization
+
+## Global Rule
+
+The full pattern lives at `~/.claude/rules/docs-cache-pattern.md` and includes:
+
+- WebSearch gate (check cache, files, training data first)
+- Freesearch for research
+- Cache-first workflow
+
+Update that file to change behavior across all projects.

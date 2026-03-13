@@ -1,0 +1,2306 @@
+{
+  "scan_date": "2026-02-07",
+  "total_repos": 24,
+  "findings": {
+    "vdd": {
+      "argparse_anti_pattern": [
+        {
+          "file": "fast_media_duplicate_finder.py",
+          "should_use": "click"
+        },
+        {
+          "file": "vdd_analyzer.py",
+          "should_use": "click"
+        },
+        {
+          "file": "vdd_dedup.py",
+          "should_use": "click"
+        },
+        {
+          "file": "two_phase_duplicate_finder.py",
+          "should_use": "click"
+        },
+        {
+          "file": "vdd/cli/scan.py",
+          "should_use": "click"
+        }
+      ]
+    },
+    "oneshot": {
+      "tailscale": [
+        {
+          "file": ".claude/hooks/context-v8.py",
+          "has_funnel": false,
+          "has_serve": false
+        },
+        {
+          "file": "scripts/check-connections.sh",
+          "has_funnel": false,
+          "has_serve": false
+        }
+      ],
+      "click": [
+        {
+          "file": "examples/weather-cli/src/weather_cli/__main__.py",
+          "has_decorator": true
+        }
+      ]
+    },
+    "atlas-voice": {
+      "click": [
+        {
+          "file": "setup_github_public.sh",
+          "has_decorator": true
+        },
+        {
+          "file": "src/smart_cli.py",
+          "has_decorator": true
+        },
+        {
+          "file": "src/main.py",
+          "has_decorator": true
+        },
+        {
+          "file": "oos/src/smart_workflows.py",
+          "has_decorator": true
+        },
+        {
+          "file": "oos/src/oos_core.py",
+          "has_decorator": true
+        }
+      ],
+      "argparse_anti_pattern": [
+        {
+          "file": "update_oos.py",
+          "should_use": "click"
+        },
+        {
+          "file": "src/oos_cli.py",
+          "should_use": "click"
+        },
+        {
+          "file": "src/voice_integration_engine.py",
+          "should_use": "click"
+        }
+      ],
+      "fastapi": [
+        {
+          "file": "oos/src/voice_api.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": true
+        }
+      ]
+    },
+    "relayq": {
+      "tailscale": [
+        {
+          "file": "tailscale-funnel-module/examples/relayq/dashboard.py",
+          "has_funnel": true,
+          "has_serve": false
+        },
+        {
+          "file": "tailscale-funnel-module/scripts/funnel-stop.sh",
+          "has_funnel": true,
+          "has_serve": false
+        },
+        {
+          "file": "tailscale-funnel-module/scripts/funnel-setup.sh",
+          "has_funnel": true,
+          "has_serve": false
+        },
+        {
+          "file": "tailscale-funnel-module/scripts/funnel-status.sh",
+          "has_funnel": true,
+          "has_serve": false
+        },
+        {
+          "file": "tailscale-funnel-module/scripts/funnel-start.sh",
+          "has_funnel": true,
+          "has_serve": false
+        },
+        {
+          "file": "legacy/install-broker.sh",
+          "has_funnel": false,
+          "has_serve": true
+        },
+        {
+          "file": "legacy/install-worker-rpi.sh",
+          "has_funnel": false,
+          "has_serve": false
+        }
+      ]
+    },
+    "ralex": {
+      "argparse_anti_pattern": [
+        {
+          "file": ".k83/mcp-servers/deepview-mcp/compress.py",
+          "should_use": "click"
+        },
+        {
+          "file": ".k83/mcp-servers/deepview-mcp/deepview_mcp/cli.py",
+          "should_use": "click"
+        },
+        {
+          "file": ".k83/mcp-servers/semgrep-mcp/scripts/bump_version.py",
+          "should_use": "click"
+        },
+        {
+          "file": ".k83/mcp-servers/mcp-servers-repo/src/fetch/src/mcp_server_fetch/__init__.py",
+          "should_use": "click"
+        },
+        {
+          "file": ".k83/mcp-servers/mcp-servers-repo/src/time/src/mcp_server_time/__init__.py",
+          "should_use": "click"
+        },
+        {
+          "file": ".k83/mcp-servers/sentry-mcp/logfire-mcp/logfire_mcp/__main__.py",
+          "should_use": "click"
+        },
+        {
+          "file": ".k83/mcp-servers/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/main.py",
+          "should_use": "click"
+        },
+        {
+          "file": ".k83/mcp-servers/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/usecases/mcp_playwright_agent/main.py",
+          "should_use": "click"
+        },
+        {
+          "file": ".k83/mcp-servers/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/usecases/mcp_github_to_slack_agent/main.py",
+          "should_use": "click"
+        },
+        {
+          "file": ".k83/mcp-servers/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/usecases/mcp_browser_agent/browser_agent.py",
+          "should_use": "click"
+        },
+        {
+          "file": ".k83/mcp-servers/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/usecases/mcp_instagram_gift_advisor/main.py",
+          "should_use": "click"
+        },
+        {
+          "file": ".k83/mcp-servers/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/usecases/mcp_supabase_migration_agent/main.py",
+          "should_use": "click"
+        },
+        {
+          "file": ".k83/mcp-servers/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/mcp_agent_server/asyncio/client.py",
+          "should_use": "click"
+        },
+        {
+          "file": ".k83/mcp-servers/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/mcp_agent_server/asyncio/basic_agent_server.py",
+          "should_use": "click"
+        },
+        {
+          "file": ".k83/mcp-servers/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/mcp/mcp_websockets/main.py",
+          "should_use": "click"
+        },
+        {
+          "file": ".k83/mcp-servers/serena-mcp/src/serena/agno.py",
+          "should_use": "click"
+        },
+        {
+          "file": ".k83/mcp-servers/serena-mcp/test/resources/repos/python/test_repo/scripts/run_app.py",
+          "should_use": "click"
+        },
+        {
+          "file": ".k83/mcp-servers/circleci-mcp/buildkite-mcp/sentry-mcp/logfire-mcp/logfire_mcp/__main__.py",
+          "should_use": "click"
+        },
+        {
+          "file": ".k83/mcp-servers/circleci-mcp/buildkite-mcp/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/main.py",
+          "should_use": "click"
+        },
+        {
+          "file": ".k83/mcp-servers/circleci-mcp/buildkite-mcp/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/usecases/mcp_playwright_agent/main.py",
+          "should_use": "click"
+        },
+        {
+          "file": ".k83/mcp-servers/circleci-mcp/buildkite-mcp/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/usecases/mcp_github_to_slack_agent/main.py",
+          "should_use": "click"
+        },
+        {
+          "file": ".k83/mcp-servers/circleci-mcp/buildkite-mcp/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/usecases/mcp_browser_agent/browser_agent.py",
+          "should_use": "click"
+        },
+        {
+          "file": ".k83/mcp-servers/circleci-mcp/buildkite-mcp/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/usecases/mcp_instagram_gift_advisor/main.py",
+          "should_use": "click"
+        },
+        {
+          "file": ".k83/mcp-servers/circleci-mcp/buildkite-mcp/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/usecases/mcp_supabase_migration_agent/main.py",
+          "should_use": "click"
+        },
+        {
+          "file": ".k83/mcp-servers/circleci-mcp/buildkite-mcp/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/mcp_agent_server/asyncio/client.py",
+          "should_use": "click"
+        },
+        {
+          "file": ".k83/mcp-servers/circleci-mcp/buildkite-mcp/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/mcp_agent_server/asyncio/basic_agent_server.py",
+          "should_use": "click"
+        },
+        {
+          "file": ".k83/mcp-servers/circleci-mcp/buildkite-mcp/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/mcp/mcp_websockets/main.py",
+          "should_use": "click"
+        },
+        {
+          "file": "Old Ralex/sentry-mcp/logfire-mcp/logfire_mcp/__main__.py",
+          "should_use": "click"
+        },
+        {
+          "file": "Old Ralex/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/main.py",
+          "should_use": "click"
+        },
+        {
+          "file": "Old Ralex/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/usecases/mcp_playwright_agent/main.py",
+          "should_use": "click"
+        },
+        {
+          "file": "Old Ralex/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/usecases/mcp_github_to_slack_agent/main.py",
+          "should_use": "click"
+        },
+        {
+          "file": "Old Ralex/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/usecases/mcp_browser_agent/browser_agent.py",
+          "should_use": "click"
+        },
+        {
+          "file": "Old Ralex/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/usecases/mcp_instagram_gift_advisor/main.py",
+          "should_use": "click"
+        },
+        {
+          "file": "Old Ralex/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/usecases/mcp_supabase_migration_agent/main.py",
+          "should_use": "click"
+        },
+        {
+          "file": "Old Ralex/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/mcp_agent_server/asyncio/client.py",
+          "should_use": "click"
+        },
+        {
+          "file": "Old Ralex/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/mcp_agent_server/asyncio/basic_agent_server.py",
+          "should_use": "click"
+        },
+        {
+          "file": "Old Ralex/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/mcp/mcp_websockets/main.py",
+          "should_use": "click"
+        }
+      ],
+      "click": [
+        {
+          "file": ".k83/mcp-servers/semgrep-mcp/src/semgrep_mcp/server.py",
+          "has_decorator": true
+        },
+        {
+          "file": ".k83/mcp-servers/mcp-servers-repo/src/git/src/mcp_server_git/__init__.py",
+          "has_decorator": true
+        },
+        {
+          "file": ".k83/mcp-servers/mcp-servers-repo/scripts/release.py",
+          "has_decorator": true
+        },
+        {
+          "file": ".k83/mcp-servers/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/mcp/mcp_streamable_http/stateless_server.py",
+          "has_decorator": true
+        },
+        {
+          "file": ".k83/mcp-servers/serena-mcp/src/serena/cli.py",
+          "has_decorator": true
+        },
+        {
+          "file": ".k83/mcp-servers/circleci-mcp/buildkite-mcp/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/mcp/mcp_streamable_http/stateless_server.py",
+          "has_decorator": true
+        },
+        {
+          "file": "Old Ralex/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/mcp/mcp_streamable_http/stateless_server.py",
+          "has_decorator": true
+        }
+      ],
+      "fastapi": [
+        {
+          "file": ".k83/mcp-servers/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/usecases/fastapi_websocket/main.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        },
+        {
+          "file": ".k83/mcp-servers/circleci-mcp/buildkite-mcp/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/usecases/fastapi_websocket/main.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        },
+        {
+          "file": "Old Ralex/sentry-mcp/logfire-mcp/zenml-mcp/mcp-scheduler/mcp-agent/examples/usecases/fastapi_websocket/main.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        }
+      ]
+    },
+    "WFM": {
+      "tailscale": [
+        {
+          "file": "start_app.sh",
+          "has_funnel": true,
+          "has_serve": true
+        },
+        {
+          "file": "tailscale-funnel-module/scripts/funnel-stop.sh",
+          "has_funnel": true,
+          "has_serve": false
+        },
+        {
+          "file": "tailscale-funnel-module/scripts/funnel-setup.sh",
+          "has_funnel": true,
+          "has_serve": false
+        },
+        {
+          "file": "tailscale-funnel-module/scripts/funnel-watchdog.sh",
+          "has_funnel": true,
+          "has_serve": false
+        },
+        {
+          "file": "tailscale-funnel-module/scripts/multi-project.sh",
+          "has_funnel": true,
+          "has_serve": false
+        },
+        {
+          "file": "tailscale-funnel-module/scripts/funnel-status.sh",
+          "has_funnel": true,
+          "has_serve": false
+        },
+        {
+          "file": "tailscale-funnel-module/scripts/setup-tailscale-mcp.sh",
+          "has_funnel": true,
+          "has_serve": true
+        },
+        {
+          "file": "tailscale-funnel-module/scripts/funnel-start.sh",
+          "has_funnel": true,
+          "has_serve": false
+        }
+      ]
+    },
+    "archon": {
+      "fastapi": [
+        {
+          "file": "test_backend.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        },
+        {
+          "file": "python/tests/progress_tracking/test_progress_api.py",
+          "has_app_init": true,
+          "has_async": false,
+          "has_pydantic": false
+        },
+        {
+          "file": "python/tests/server/api_routes/test_projects_api_polling.py",
+          "has_app_init": true,
+          "has_async": true,
+          "has_pydantic": false
+        },
+        {
+          "file": "python/src/agents/server.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": true
+        },
+        {
+          "file": "python/src/server/main.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        },
+        {
+          "file": "python/src/server/middleware/logging_middleware.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        },
+        {
+          "file": "python/src/server/api_routes/vault_api.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": true
+        },
+        {
+          "file": "python/src/server/api_routes/projects_api.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": true
+        },
+        {
+          "file": "python/src/server/api_routes/providers_api.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        },
+        {
+          "file": "python/src/server/api_routes/bug_report_api.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": true
+        },
+        {
+          "file": "python/src/server/api_routes/settings_api.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": true
+        },
+        {
+          "file": "python/src/server/api_routes/mcp_api.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        },
+        {
+          "file": "python/src/server/api_routes/agent_chat_api.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": true
+        },
+        {
+          "file": "python/src/server/api_routes/version_api.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": true
+        },
+        {
+          "file": "python/src/server/api_routes/knowledge_api.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": true
+        },
+        {
+          "file": "python/src/server/api_routes/internal_api.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        },
+        {
+          "file": "python/src/server/api_routes/pages_api.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": true
+        },
+        {
+          "file": "python/src/server/api_routes/progress_api.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": true
+        },
+        {
+          "file": "python/src/server/api_routes/ollama_api.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": true
+        },
+        {
+          "file": "python/src/server/api_routes/migration_api.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": true
+        }
+      ],
+      "nginx": [
+        {
+          "file": "python/src/agents/server.py"
+        }
+      ]
+    },
+    "frugalos": {
+      "argparse_anti_pattern": [
+        {
+          "file": "run_hermes.py",
+          "should_use": "click"
+        },
+        {
+          "file": "tests/run_tests.py",
+          "should_use": "click"
+        },
+        {
+          "file": "hermes/routing/cli.py",
+          "should_use": "click"
+        }
+      ],
+      "tailscale": [
+        {
+          "file": "hermes/config.py",
+          "has_funnel": false,
+          "has_serve": false
+        },
+        {
+          "file": "hermes/queue.py",
+          "has_funnel": false,
+          "has_serve": false
+        },
+        {
+          "file": "hermes/app.py",
+          "has_funnel": false,
+          "has_serve": true
+        },
+        {
+          "file": "hermes/tailscale.py",
+          "has_funnel": false,
+          "has_serve": false
+        },
+        {
+          "file": "hermes/config.yaml",
+          "has_funnel": false,
+          "has_serve": false
+        }
+      ],
+      "fastapi": [
+        {
+          "file": "hermes/app.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        },
+        {
+          "file": "hermes/routing/api_routes.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": true
+        }
+      ]
+    },
+    "atlas-code": {
+      "argparse_anti_pattern": [
+        {
+          "file": "tests/basic/test_onboarding.py",
+          "should_use": "click"
+        },
+        {
+          "file": "benchmark/problem_stats.py",
+          "should_use": "click"
+        },
+        {
+          "file": "aider/watch.py",
+          "should_use": "click"
+        },
+        {
+          "file": "aider/args_formatter.py",
+          "should_use": "click"
+        },
+        {
+          "file": "aider/args.py",
+          "should_use": "click"
+        },
+        {
+          "file": "aider/history.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/versionbump.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/homepage.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/30k-image.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/recording_audio.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/blame.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/logo_svg.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/issues.py",
+          "should_use": "click"
+        }
+      ]
+    },
+    "poytz": {
+      "tailscale": [
+        {
+          "file": "src/index.js",
+          "has_funnel": true,
+          "has_serve": true
+        }
+      ]
+    },
+    "kid-friendly-ai": {
+      "nginx": [
+        {
+          "file": "docker-compose.yml"
+        },
+        {
+          "file": "deploy-docker.sh"
+        },
+        {
+          "file": "monitoring/prometheus.yml"
+        },
+        {
+          "file": "docker/docker-compose.prod.yml"
+        }
+      ]
+    },
+    "arb": {
+      "argparse_anti_pattern": [
+        {
+          "file": "detection-service/src/smart_money_monitor.py",
+          "should_use": "click"
+        },
+        {
+          "file": "detection-service/src/order_book.py",
+          "should_use": "click"
+        },
+        {
+          "file": "detection-service/src/backtest.py",
+          "should_use": "click"
+        },
+        {
+          "file": "detection-service/src/trading_bot.py",
+          "should_use": "click"
+        },
+        {
+          "file": "detection-service/scripts/validate_trades.py",
+          "should_use": "click"
+        },
+        {
+          "file": "detection-service/scripts/check_duplicates.py",
+          "should_use": "click"
+        },
+        {
+          "file": "detection-service/scripts/cleanup_duplicate_positions.py",
+          "should_use": "click"
+        },
+        {
+          "file": "detection-service/scripts/update_tier_performance.py",
+          "should_use": "click"
+        },
+        {
+          "file": "detection-service/scripts/release_quarantine.py",
+          "should_use": "click"
+        },
+        {
+          "file": "detection-service/scripts/backfill_score_tier_pools.py",
+          "should_use": "click"
+        },
+        {
+          "file": "detection-service/scripts/backfill_hypothetical_performance.py",
+          "should_use": "click"
+        },
+        {
+          "file": "detection-service/scripts/analyze_latency.py",
+          "should_use": "click"
+        },
+        {
+          "file": "detection-service/scripts/track_wallet_performance.py",
+          "should_use": "click"
+        },
+        {
+          "file": "detection-service/scripts/score_wallets.py",
+          "should_use": "click"
+        },
+        {
+          "file": "detection-service/scripts/validate_dry_run.py",
+          "should_use": "click"
+        },
+        {
+          "file": "detection-service/scripts/migrate_unified_pool.py",
+          "should_use": "click"
+        },
+        {
+          "file": "detection-service/scripts/resolve_paper_positions.py",
+          "should_use": "click"
+        },
+        {
+          "file": "detection-service/scripts/quarantine_baseline.py",
+          "should_use": "click"
+        },
+        {
+          "file": "detection-service/scripts/backtest_historical.py",
+          "should_use": "click"
+        },
+        {
+          "file": "detection-service/scripts/microstructure/validate_microstructure.py",
+          "should_use": "click"
+        }
+      ]
+    },
+    "gaas": {
+      "fastapi": [
+        {
+          "file": "src/web/app.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        }
+      ],
+      "tailscale": [
+        {
+          "file": "src/web/app.py",
+          "has_funnel": false,
+          "has_serve": false
+        },
+        {
+          "file": "scripts/setup_system.sh",
+          "has_funnel": false,
+          "has_serve": false
+        },
+        {
+          "file": "scripts/setup_tailscale.sh",
+          "has_funnel": false,
+          "has_serve": false
+        }
+      ],
+      "nginx": [
+        {
+          "file": "scripts/deploy_systemd.sh"
+        }
+      ],
+      "argparse_anti_pattern": [
+        {
+          "file": "scripts/stability_test.py",
+          "should_use": "click"
+        }
+      ]
+    },
+    "oos": {
+      "argparse_anti_pattern": [
+        {
+          "file": "oos_service_manager.py",
+          "should_use": "click"
+        },
+        {
+          "file": "update_oos.py",
+          "should_use": "click"
+        },
+        {
+          "file": "lib/google_search_fallback.py",
+          "should_use": "click"
+        },
+        {
+          "file": "src/oos_full_stack.py",
+          "should_use": "click"
+        },
+        {
+          "file": "src/repository_analyzer.py",
+          "should_use": "click"
+        },
+        {
+          "file": "src/token_optimization.py",
+          "should_use": "click"
+        },
+        {
+          "file": "src/orchestrator.py",
+          "should_use": "click"
+        },
+        {
+          "file": "src/auto_documentation.py",
+          "should_use": "click"
+        },
+        {
+          "file": "bin/agent-os-health.py",
+          "should_use": "click"
+        },
+        {
+          "file": "bin/clarification_cli.py",
+          "should_use": "click"
+        },
+        {
+          "file": "bin/meta-ai-enhancer.py",
+          "should_use": "click"
+        },
+        {
+          "file": "helpers/queue_manager.py",
+          "should_use": "click"
+        },
+        {
+          "file": "helpers/database_config.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/retry_failed_task.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/disk_cleanup.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/performance_optimizer.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/worker_scaler.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/database_backup.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/test_queue_failure.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/test_db_pool.py",
+          "should_use": "click"
+        }
+      ],
+      "click": [
+        {
+          "file": "src/oos_task_system/cli.py",
+          "has_decorator": true
+        }
+      ],
+      "traefik": [
+        {
+          "file": "bin/provision-infrastructure.sh",
+          "is_docker_label": true
+        }
+      ],
+      "nginx": [
+        {
+          "file": "bin/provision-infrastructure.sh"
+        }
+      ]
+    },
+    "Notary": {
+      "tailscale": [
+        {
+          "file": "homelab/scripts/setup.sh",
+          "has_funnel": false,
+          "has_serve": false
+        }
+      ]
+    },
+    "dada": {
+      "fastapi": [
+        {
+          "file": "chat_manager.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        },
+        {
+          "file": "app.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        },
+        {
+          "file": "mnt/user-data/outputs/dada-khamel-with-call/app.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        },
+        {
+          "file": "mnt/user-data/outputs/dada-khamel/app.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        },
+        {
+          "file": "vercel-deploy/api/vercel_app.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        },
+        {
+          "file": "api/vercel_app.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        }
+      ],
+      "nginx": [
+        {
+          "file": "FINAL_BULLETPROOF.sh"
+        }
+      ],
+      "argparse_anti_pattern": [
+        {
+          "file": "generate_custody_report.py",
+          "should_use": "click"
+        }
+      ]
+    },
+    "atlas": {
+      "fastapi": [
+        {
+          "file": "vos/api/routes.py",
+          "has_app_init": false,
+          "has_async": false,
+          "has_pydantic": false
+        },
+        {
+          "file": "web/web_interface.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": true
+        },
+        {
+          "file": "web/api.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": true
+        },
+        {
+          "file": "web/app.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        },
+        {
+          "file": "web/api/main.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        },
+        {
+          "file": "web/api/search_server.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        },
+        {
+          "file": "api/main.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        },
+        {
+          "file": "api/routers/health.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        },
+        {
+          "file": "api/routers/shiori_compat.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": true
+        },
+        {
+          "file": "api/routers/sync.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        },
+        {
+          "file": "api/routers/podcasts.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": true
+        },
+        {
+          "file": "api/routers/content.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": true
+        },
+        {
+          "file": "api/routers/articles.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": true
+        },
+        {
+          "file": "api/routers/export.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        },
+        {
+          "file": "api/routers/dashboard.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": true
+        },
+        {
+          "file": "api/routers/intelligence.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": true
+        },
+        {
+          "file": "api/routers/notes.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": true
+        },
+        {
+          "file": "api/routers/search.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": true
+        },
+        {
+          "file": "scripts/_archive/podemos_rss_server.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        },
+        {
+          "file": "scripts/_archive/security_hardening.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        }
+      ],
+      "argparse_anti_pattern": [
+        {
+          "file": "tools/deployment_manager.py",
+          "should_use": "click"
+        },
+        {
+          "file": "tools/atlas_ops.py",
+          "should_use": "click"
+        },
+        {
+          "file": "tools/monitoring_agent.py",
+          "should_use": "click"
+        },
+        {
+          "file": "tools/config_cli.py",
+          "should_use": "click"
+        },
+        {
+          "file": "tools/automation/youtube_history_scraper.py",
+          "should_use": "click"
+        },
+        {
+          "file": "tools/automation/google_data_harvester.py",
+          "should_use": "click"
+        },
+        {
+          "file": "tools/automation/automated_content_pipeline.py",
+          "should_use": "click"
+        },
+        {
+          "file": "tools/ingest/queue/queue_processor.py",
+          "should_use": "click"
+        },
+        {
+          "file": "tools/monitoring/atlas_status.py",
+          "should_use": "click"
+        },
+        {
+          "file": "src/repository_analyzer.py",
+          "should_use": "click"
+        },
+        {
+          "file": "src/orchestrator.py",
+          "should_use": "click"
+        },
+        {
+          "file": "src/auto_documentation.py",
+          "should_use": "click"
+        },
+        {
+          "file": "src/oos_cli.py",
+          "should_use": "click"
+        },
+        {
+          "file": "src/atlas/cli/main.py",
+          "should_use": "click"
+        },
+        {
+          "file": "src/atlas/cli/commands.py",
+          "should_use": "click"
+        },
+        {
+          "file": "src/atlas/cli/commands/api_command.py",
+          "should_use": "click"
+        },
+        {
+          "file": "web/log_dashboard.py",
+          "should_use": "click"
+        },
+        {
+          "file": "modules/quality/cli.py",
+          "should_use": "click"
+        },
+        {
+          "file": "modules/ingest/bulk_import.py",
+          "should_use": "click"
+        },
+        {
+          "file": "modules/ingest/youtube_ingester.py",
+          "should_use": "click"
+        },
+        {
+          "file": "modules/ingest/gmail_ingester.py",
+          "should_use": "click"
+        },
+        {
+          "file": "modules/ingest/youtube_history_scraper.py",
+          "should_use": "click"
+        },
+        {
+          "file": "modules/ingest/cli.py",
+          "should_use": "click"
+        },
+        {
+          "file": "modules/links/cli.py",
+          "should_use": "click"
+        },
+        {
+          "file": "modules/enrich/ad_stripper.py",
+          "should_use": "click"
+        },
+        {
+          "file": "modules/enrich/versioned_cleaner.py",
+          "should_use": "click"
+        },
+        {
+          "file": "modules/enrich/link_extractor.py",
+          "should_use": "click"
+        },
+        {
+          "file": "modules/enrich/content_cleaner.py",
+          "should_use": "click"
+        },
+        {
+          "file": "modules/enrich/review.py",
+          "should_use": "click"
+        },
+        {
+          "file": "modules/enrich/url_sanitizer.py",
+          "should_use": "click"
+        },
+        {
+          "file": "modules/enrich/cli.py",
+          "should_use": "click"
+        },
+        {
+          "file": "modules/digest/cli.py",
+          "should_use": "click"
+        },
+        {
+          "file": "modules/capture/cli.py",
+          "should_use": "click"
+        },
+        {
+          "file": "modules/statemachine/cli.py",
+          "should_use": "click"
+        },
+        {
+          "file": "modules/podcasts/orchestrator.py",
+          "should_use": "click"
+        },
+        {
+          "file": "modules/podcasts/cli.py",
+          "should_use": "click"
+        },
+        {
+          "file": "modules/ask/indexer.py",
+          "should_use": "click"
+        },
+        {
+          "file": "modules/ask/cli.py",
+          "should_use": "click"
+        },
+        {
+          "file": "modules/pipeline/continuous_retry.py",
+          "should_use": "click"
+        },
+        {
+          "file": "modules/pipeline/cli.py",
+          "should_use": "click"
+        },
+        {
+          "file": "modules/pipeline/content_validator.py",
+          "should_use": "click"
+        },
+        {
+          "file": "modules/pipeline/content_pipeline.py",
+          "should_use": "click"
+        },
+        {
+          "file": "modules/export/cli.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/backfill_episode_metadata.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/url_status.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/progress_snapshot.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/analyze_link_queue.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/stratechery_crawler.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/cleanup_duplicates.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/process_high_value_urls.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/cleanup_processed_audio.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/fix_episode_urls.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/validate_scripts.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/verify_content.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/cleanup_marginal_garbage.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/preprocess_whisper_transcript.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/enrich_improve_loop.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/cleanup_whisper_state.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/podcast_health_check.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/atlas_status.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/check_proxy_health.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/validate_podcast_sources.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/analyze_ads.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/process_pending_urls.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/podcast_status.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/cloud_fetcher.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/import_whisper_transcripts.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/normalize_atp_speakers.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/atlas_daemon.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/fallback_to_whisper.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/cleanup_old_audio.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/download_for_whisper.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/retry_failed_urls.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/podcast_audit.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/reconcile_transcripts.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/run_enrichment.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/cloud_orchestrator.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/recover_marginal_tiered.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/cleanup_garbage.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/check_cookies.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/assign_pathways.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/bin/clarification_cli.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/bin/meta-ai-enhancer.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/rss_episode_harvester.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/execute_url_manifest.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/deduplicate_stratechery.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/podemos_scheduler.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/mac_mini_worker.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/deploy.sh",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/retry_failed_task.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/crawl_daringfireball.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/alert_manager.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/podemos_monitor.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/crawl_asianometry.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/atlas_scheduler.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/search_manager.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/disk_cleanup.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/execute_podcast_manifest.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/transcribe_podcasts.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/fixed_transcript_worker.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/generate_url_manifest.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/troubleshoot.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/weekly_reporter.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/retry_failed_with_fixes.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/generate_env.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/batch_transcript_fetcher.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/database_cleanup.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/diagnose_environment.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/parallel_youtube_worker.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/reclean_fps.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/prioritized_transcript_discovery.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/import_stratechery_crawl.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/performance_optimizer.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/validate_config.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/comprehensive_deduplication.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/process_instapaper.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/sync_resolvers.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/crawl_dithering.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/duplicate_manager.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/podemos_opml_parser.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/worker_scaler.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/performance_benchmark.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/podemos_audio_cutter.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/podemos_transcription.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/export_for_whisper.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/podemos_episode_discovery.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/podemos_feed_monitor.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/database_backup.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/setup_wizard.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/podemos_ad_detection.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/validate_dependencies.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/migrate_selections_to_notes.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/log_analyzer.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/retry_with_robust.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/recover_marginal.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/generate_podcast_manifest.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/run-bot.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/notify.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/test_queue_failure.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/recover_content.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/mac_whisper_worker.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/atlas_bulk_sender.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/test_db_pool.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/fetch_paywalled.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/_archive/podemos_rss_generator.py",
+          "should_use": "click"
+        }
+      ],
+      "tailscale": [
+        {
+          "file": "tools/checklists/checkcheckit.yaml",
+          "has_funnel": false,
+          "has_serve": false
+        },
+        {
+          "file": "api/routers/sync.py",
+          "has_funnel": false,
+          "has_serve": false
+        },
+        {
+          "file": "scripts/cloud_fetcher.py",
+          "has_funnel": false,
+          "has_serve": false
+        },
+        {
+          "file": "scripts/whisper_push_pipeline.sh",
+          "has_funnel": false,
+          "has_serve": false
+        },
+        {
+          "file": "scripts/_archive/podcast_backlog.sh",
+          "has_funnel": false,
+          "has_serve": false
+        }
+      ],
+      "nginx": [
+        {
+          "file": "web/auth/session_manager.py"
+        },
+        {
+          "file": "scripts/_archive/security_audit.py"
+        }
+      ]
+    },
+    "trojanhorse": {
+      "fastapi": [
+        {
+          "file": "TrojanHorse/api_server.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": true
+        }
+      ]
+    },
+    "Podemos": {
+      "argparse_anti_pattern": [
+        {
+          "file": "podclean/src/main.py",
+          "should_use": "click"
+        }
+      ],
+      "fastapi": [
+        {
+          "file": "podclean/src/serve/api.py",
+          "has_app_init": true,
+          "has_async": true,
+          "has_pydantic": true
+        }
+      ]
+    },
+    "mcp-servers": {
+      "argparse_anti_pattern": [
+        {
+          "file": "main.py",
+          "should_use": "click"
+        },
+        {
+          "file": "compress.py",
+          "should_use": "click"
+        },
+        {
+          "file": "logfire_mcp/__main__.py",
+          "should_use": "click"
+        },
+        {
+          "file": "deepview_mcp/cli.py",
+          "should_use": "click"
+        },
+        {
+          "file": "src/fetch/src/mcp_server_fetch/__init__.py",
+          "should_use": "click"
+        },
+        {
+          "file": "src/time/src/mcp_server_time/__init__.py",
+          "should_use": "click"
+        },
+        {
+          "file": "test/resources/repos/python/test_repo/scripts/run_app.py",
+          "should_use": "click"
+        },
+        {
+          "file": "serena-extracted/serena-main/src/serena/agno.py",
+          "should_use": "click"
+        },
+        {
+          "file": "serena-extracted/serena-main/test/resources/repos/python/test_repo/scripts/run_app.py",
+          "should_use": "click"
+        }
+      ],
+      "click": [
+        {
+          "file": "src/git/src/mcp_server_git/__init__.py",
+          "has_decorator": true
+        },
+        {
+          "file": "scripts/release.py",
+          "has_decorator": true
+        },
+        {
+          "file": "serena-extracted/serena-main/src/serena/cli.py",
+          "has_decorator": true
+        }
+      ]
+    },
+    "divorce": {
+      "argparse_anti_pattern": [
+        {
+          "file": "SCRIPTS/v2_avoidance_tracker.py",
+          "should_use": "click"
+        },
+        {
+          "file": "SCRIPTS/v2_counter_evidence_builder.py",
+          "should_use": "click"
+        },
+        {
+          "file": "SCRIPTS/v2_adversarial_prep.py",
+          "should_use": "click"
+        },
+        {
+          "file": "SCRIPTS/v2_attack_surface_mapper.py",
+          "should_use": "click"
+        },
+        {
+          "file": "SCRIPTS/v2_separation_timeline.py",
+          "should_use": "click"
+        },
+        {
+          "file": "SCRIPTS/v2_custody_framework.py",
+          "should_use": "click"
+        },
+        {
+          "file": "SCRIPTS/v2_her_claims_analyzer.py",
+          "should_use": "click"
+        },
+        {
+          "file": "SCRIPTS/v2_corpus_filter.py",
+          "should_use": "click"
+        },
+        {
+          "file": "SCRIPTS/activity_log_v2.py",
+          "should_use": "click"
+        },
+        {
+          "file": "SCRIPTS/v2_kid_centric_builder.py",
+          "should_use": "click"
+        },
+        {
+          "file": "SCRIPTS/extract_conversation_corpus.py",
+          "should_use": "click"
+        },
+        {
+          "file": "SCRIPTS/v2_build_divorce_case.py",
+          "should_use": "click"
+        }
+      ]
+    },
+    "homelab": {
+      "tailscale": [
+        {
+          "file": "homelab.sh",
+          "has_funnel": true,
+          "has_serve": true
+        },
+        {
+          "file": "docker-compose.yml",
+          "has_funnel": true,
+          "has_serve": true
+        },
+        {
+          "file": "config/tailscale/auto-start-tailscale.sh",
+          "has_funnel": false,
+          "has_serve": false
+        },
+        {
+          "file": "infrastructure/orchestrator.py",
+          "has_funnel": false,
+          "has_serve": true
+        },
+        {
+          "file": "infrastructure/COMPREHENSIVE_DASHBOARD_KNOWLEDGE_BASE.py",
+          "has_funnel": false,
+          "has_serve": true
+        },
+        {
+          "file": "ansible/roles/mac-mini/tasks/main.yml",
+          "has_funnel": false,
+          "has_serve": false
+        },
+        {
+          "file": "ansible/roles/mac-mini/vars/main.yml",
+          "has_funnel": false,
+          "has_serve": false
+        },
+        {
+          "file": "scripts/setup-universal-repos.sh",
+          "has_funnel": false,
+          "has_serve": true
+        },
+        {
+          "file": "scripts/pihole-golden-config.sh",
+          "has_funnel": false,
+          "has_serve": true
+        },
+        {
+          "file": "scripts/complete-filedrop-setup.sh",
+          "has_funnel": false,
+          "has_serve": false
+        },
+        {
+          "file": "scripts/setup-smart-queue-processing.sh",
+          "has_funnel": false,
+          "has_serve": true
+        },
+        {
+          "file": "scripts/setup-mac-integration.sh",
+          "has_funnel": false,
+          "has_serve": true
+        },
+        {
+          "file": "scripts/migrate-pihole-immediately.sh",
+          "has_funnel": false,
+          "has_serve": true
+        },
+        {
+          "file": "scripts/tailscale-manager.sh",
+          "has_funnel": false,
+          "has_serve": true
+        },
+        {
+          "file": "scripts/setup-mac-compute-module.sh",
+          "has_funnel": false,
+          "has_serve": true
+        },
+        {
+          "file": "scripts/setup-remote-access.sh",
+          "has_funnel": false,
+          "has_serve": true
+        },
+        {
+          "file": "scripts/bootstrap-ssh.sh",
+          "has_funnel": false,
+          "has_serve": true
+        },
+        {
+          "file": "scripts/test-web-services.sh",
+          "has_funnel": true,
+          "has_serve": true
+        },
+        {
+          "file": "scripts/verify-homelab.sh",
+          "has_funnel": true,
+          "has_serve": false
+        },
+        {
+          "file": "scripts/cron-tailscale-manager.sh",
+          "has_funnel": false,
+          "has_serve": false
+        },
+        {
+          "file": "scripts/mac-mini-healthcheck.sh",
+          "has_funnel": false,
+          "has_serve": false
+        },
+        {
+          "file": "scripts/setup.sh",
+          "has_funnel": false,
+          "has_serve": true
+        },
+        {
+          "file": "scripts/configure-services.sh",
+          "has_funnel": false,
+          "has_serve": true
+        },
+        {
+          "file": "scripts/taildrop-receiver.sh",
+          "has_funnel": false,
+          "has_serve": false
+        },
+        {
+          "file": "scripts/fix-tailscale.sh",
+          "has_funnel": false,
+          "has_serve": false
+        },
+        {
+          "file": "scripts/homelab-audit.sh",
+          "has_funnel": true,
+          "has_serve": true
+        },
+        {
+          "file": "scripts/check-network.sh",
+          "has_funnel": false,
+          "has_serve": true
+        },
+        {
+          "file": "scripts/setup-filedrop-prod.sh",
+          "has_funnel": false,
+          "has_serve": false
+        },
+        {
+          "file": "scripts/setup-mac-network-hub.sh",
+          "has_funnel": false,
+          "has_serve": true
+        },
+        {
+          "file": "scripts/complete-filedrop-management.sh",
+          "has_funnel": false,
+          "has_serve": false
+        },
+        {
+          "file": "scripts/test-critical-services.sh",
+          "has_funnel": true,
+          "has_serve": false
+        },
+        {
+          "file": "scripts/bootstrap-zed-remote.sh",
+          "has_funnel": false,
+          "has_serve": true
+        },
+        {
+          "file": "scripts/setup-cross-platform-access.sh",
+          "has_funnel": false,
+          "has_serve": true
+        },
+        {
+          "file": "scripts/remote-mac-exec.sh",
+          "has_funnel": false,
+          "has_serve": false
+        },
+        {
+          "file": "scripts/network-healthcheck-cron.sh",
+          "has_funnel": false,
+          "has_serve": false
+        },
+        {
+          "file": "scripts/disable-pihole-rpi4.sh",
+          "has_funnel": false,
+          "has_serve": false
+        },
+        {
+          "file": "scripts/setup-ssh-shortcuts.sh",
+          "has_funnel": false,
+          "has_serve": true
+        },
+        {
+          "file": "scripts/zoom-hotkey-agent/agent.py",
+          "has_funnel": false,
+          "has_serve": true
+        },
+        {
+          "file": "scripts/oci-setup/immortal_tailscale.sh",
+          "has_funnel": false,
+          "has_serve": false
+        },
+        {
+          "file": "scripts/oci-setup/bulletproof_dns_setup.sh",
+          "has_funnel": false,
+          "has_serve": false
+        },
+        {
+          "file": "services/homeassistant/docker-compose.yml",
+          "has_funnel": true,
+          "has_serve": false
+        },
+        {
+          "file": "services/homelab-bot/bot.py",
+          "has_funnel": false,
+          "has_serve": true
+        },
+        {
+          "file": "services/pihole/docker-compose.yml",
+          "has_funnel": false,
+          "has_serve": false
+        },
+        {
+          "file": "services/tailscale/docker-compose.yml",
+          "has_funnel": false,
+          "has_serve": false
+        },
+        {
+          "file": "homepage/custom.js",
+          "has_funnel": true,
+          "has_serve": true
+        }
+      ],
+      "nginx": [
+        {
+          "file": "docker-compose.yml"
+        },
+        {
+          "file": "infrastructure/self-healing-daemon.py"
+        },
+        {
+          "file": "infrastructure/orchestrator.py"
+        },
+        {
+          "file": "infrastructure/SSL_CERTIFICATE_MANAGER.py"
+        },
+        {
+          "file": "infrastructure/SELF_HEALING_AUTOMATION.py"
+        },
+        {
+          "file": "infrastructure/SERVICE_REGISTRY_AUTO_DISCOVERY.py"
+        },
+        {
+          "file": "infrastructure/COMPREHENSIVE_DASHBOARD_KNOWLEDGE_BASE.py"
+        },
+        {
+          "file": "ansible/playbook.yml"
+        },
+        {
+          "file": "scripts/setup-universal-repos.sh"
+        },
+        {
+          "file": "scripts/complete-filedrop-setup.sh"
+        },
+        {
+          "file": "scripts/setup-smart-queue-processing.sh"
+        },
+        {
+          "file": "scripts/init-all-services.sh"
+        },
+        {
+          "file": "scripts/setup-mac-compute-module.sh"
+        },
+        {
+          "file": "scripts/configure-services.sh"
+        },
+        {
+          "file": "scripts/homelab-audit.sh"
+        },
+        {
+          "file": "scripts/setup-filedrop-prod.sh"
+        },
+        {
+          "file": "scripts/inventory-machine.sh"
+        },
+        {
+          "file": "services/funnel-proxy/docker-compose.yml"
+        },
+        {
+          "file": "services/penny-builds/docker-compose.yml"
+        },
+        {
+          "file": "services/crowdsec/docker-compose.yml"
+        },
+        {
+          "file": "services/baikal/docker-compose.yml"
+        }
+      ],
+      "traefik": [
+        {
+          "file": "tools/render_compose.py",
+          "is_docker_label": false
+        },
+        {
+          "file": "scripts/final-post-migration.sh",
+          "is_docker_label": false
+        },
+        {
+          "file": "services/homelab-bot/bot.py",
+          "is_docker_label": false
+        },
+        {
+          "file": "services/crowdsec/docker-compose.yml",
+          "is_docker_label": false
+        }
+      ],
+      "argparse_anti_pattern": [
+        {
+          "file": "infrastructure/ZERO_INTERVENTION_HOMELAB.py",
+          "should_use": "click"
+        },
+        {
+          "file": "framework/scripts/render.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/hardlink-dedup-robust.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/setup-ha-areas.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/lron-stratify-files.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/storage-audit.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/lron_fallback_renamer.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/lron-theporndb-client.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/lron-review-bot.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/lron-manual-review.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/lron_metadata_writer.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/analyze-master-index.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/analyze-lron-content.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/lron-convert-videos.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/lron_metadata_reader.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/lron-api-enrich.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/lron-hash-matcher.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/lron-jellyfin-cleanup.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/optimize-media-library.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/retry-failed-conversions.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/incremental-index.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/apply-hardlinks-from-index.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/lron-pipeline.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/apply-hardlinks-from-csv.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/.archive-dangerous/create-master-index.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/zoom-hotkey-agent/agent.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/media-rename/execute-from-inventory.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/media-rename/generate-inventory.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/media-rename/filebot-rename.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/media-rename/rollback.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/media-rename/execute-renames.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/photo-dedupe/apply-hardlinks.py",
+          "should_use": "click"
+        },
+        {
+          "file": "scripts/photo-dedupe/dedupe-photos.py",
+          "should_use": "click"
+        }
+      ],
+      "fastapi": [
+        {
+          "file": "scripts/zoom-hotkey-agent/agent.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": true
+        }
+      ]
+    },
+    "gmail-bookmark-service": {
+      "fastapi": [
+        {
+          "file": "src/gmail_bookmark_service/main.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        },
+        {
+          "file": "src/gmail_bookmark_service/api/health.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        },
+        {
+          "file": "src/gmail_bookmark_service/api/webhook.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": false
+        }
+      ]
+    },
+    "atlas-coder": {
+      "argparse_anti_pattern": [
+        {
+          "file": "atlas_dspy.py",
+          "should_use": "click"
+        },
+        {
+          "file": "atlas_dspy_v6.py",
+          "should_use": "click"
+        }
+      ],
+      "click": [
+        {
+          "file": "atlas_coder/cli/main.py",
+          "has_decorator": true
+        }
+      ],
+      "fastapi": [
+        {
+          "file": "examples/fastapi_complete/main.py",
+          "has_app_init": false,
+          "has_async": true,
+          "has_pydantic": true
+        }
+      ]
+    }
+  }
+}
