@@ -1,7 +1,22 @@
 <!-- janitor:begin:recent -->
-- Added Homelab project contract (`9d494ae`)
-- Bootstrapped LLM-OVERVIEW files for 2026-05-10 (`8baad18`)
-- Added homelab infrastructure documentation cache (`484d1c8`)
-- Added Claude cookbooks, quickstarts, and anthropic-tools cache (`eebb791`)
-- Added Anthropic skills, claude-code, and SDKs cache (`26a164a`)
+- 9d494ae9920d3885e74f57eff61454b6cef0e694: chore: add Homelab project contract
+- 8baad18b9a6cfee0ed93868ef481eac793e69d72: chore: bootstrap LLM-OVERVIEW files 2026-05-10
+- 484d1c886731a340c5238a044a3c06138f85db01: Add homelab infrastructure documentation cache
+- eebb791ab6afd7a550e9e8218975ea70b1273d2a: Add cache: Claude cookbooks, quickstarts, and anthropic-tools
+- 26a164a3c2b15df51367936d08f34502153a42c4: Add cache: Anthropic skills, claude-code, and SDKs
+- 9e31d4e145c7d5c744366df38d65ceffbd0b3ce3: feat: add Context Hub annotations and smart discovery
+- b08d8c84e041d3c990524c25fed1b3e86075dbc8: docs: add explicit search order (cache → freesearch → training → websearch)
+- 2c531d00ca0e98c2c1b26c4080fe0b4a97b24094: Add cache: React, Playwright, Uvicorn, Transformers, TikToken, BeautifulSoup, Sentry, Cloudflare Workers
+- 1c42a5fe99bacff5e7365e7da50719c6373e9574: Cache top 12 priority library docs
+- 35c4e24809835ba8b17e3a7c764274c44049a7b3: Add library documentation catalog (514 libraries)
+- 7fbdfcd8cf6df5280bbea57db8f1053df498f52a: Add cache: astro and betterauth (javascript)
+- 5458ef98829a9483cdbc26261e72e077cb6e9842: Add cache: click (python)
+- 1826f97c477a32098546878f54c8670d7e92a951: Update README to point to oneshot as docs-link source
+- 61ed302b26b128574acdf666ce7322e94aed0055: Add linked docs for polymarket and convex
+- b8091afd7f1084a0b84c1d6567edc860818697d8: Add docs-link CLI for managing documentation symlinks
+- 8a19f8581502810fcb2b2c921641a9e2907f246d: Add cache: polymarket (services)
+- af7592c0c2638bd26a0435b597eaba0362c1339c: Add cache: cloudflare and update tailscale docs
+- 0705b8b152e0c599500b73bcc22707a454a15895: Add .env setup for API keys
+- fffd4ea62b59d7f5ca90fca2c50ed265c279a235: Rewrite README with clear usage instructions
+- b04b822299d21acbc7e9b568f9a1ec6e078fd44a: Add auto-commit step to workflow
 <!-- janitor:end:recent -->
